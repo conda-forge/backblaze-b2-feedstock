@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/b2-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/b2-{{ version }}.tar.gz
   sha256: b9be2cb1c6e52c1cee948af265619d049bac62e4970de29a3cc01bff625c9539
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - b2 = b2._internal.b2v4.__main__:main
@@ -20,11 +20,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pdm-backend
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - argcomplete >=2,<4
     - arrow >=1.0.2,<2.0.0
     - b2sdk >=2.6.0,<3
@@ -47,6 +47,7 @@ test:
     - b2v4 --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/Backblaze/B2_Command_Line_Tool
