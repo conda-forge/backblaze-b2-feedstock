@@ -1,5 +1,5 @@
 {% set name = "b2" %}
-{% set version = "4.3.3" %}
+{% set version = "4.4.1" %}
 
 package:
   name: backblaze-b2
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/b2-{{ version }}.tar.gz
-  sha256: a66f78e91f8ac36721093b751d09d3d228957473ee3df50b5138e72290e32646
+  sha256: cc3595b035e2a3fbc1e8d923288d3bdbd07a633e79f303ca602a3932d5865572
 
 build:
   noarch: python
@@ -25,17 +25,16 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - argcomplete >=2,<4
+    - argcomplete >=3.5.2,<4
     - arrow >=1.0.2,<2.0.0
-    - b2sdk >=2.8.1,<3
-    - docutils >=0.18.1
-    - importlib-metadata >=3.3
+    - b2sdk >=2.9.4,<3
+    - docutils >=0.18.1,<0.22
     - phx-class-registry >=4.0,<5
     - rst2ansi ==0.1.5
     - tabulate ==0.9.0
     - tqdm >=4.65.0,<5
     - platformdirs >=3.11.0,<5
-    - setuptools >=60
+    - setuptools >=60,<80
 
 test:
   imports:
