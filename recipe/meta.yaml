@@ -21,7 +21,8 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - pdm-backend
+    - hatchling >=1.24.2
+    - hatch-vcs >=0.4
     - pip
   run:
     - python >={{ python_min }}
