@@ -1,13 +1,13 @@
 {% set name = "b2" %}
-{% set version = "4.7.0" %}
+{% set version = "5.0.0" %}
 
 package:
   name: backblaze-b2
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/b2-{{ version }}.tar.gz
-  sha256: d8031be600382f3c166564bb84a02fa0f2cd8991e93728b03db56576799c9ba6
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/b2-{{ version }}.tar.gz
+  sha256: dd347f15e0a2c8ea32e1bd5e1a49e294d3ab96b8008051c4e60d1f1505128fe9
 
 build:
   noarch: python
