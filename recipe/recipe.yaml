@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: b2
-  version: "4.7.1"
+  version: "5.0.0"
 
 package:
   name: backblaze-b2
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/b2-${{ version }}.tar.gz
-  sha256: a6e571d01f559cd6baca822bcec17aba7326c9c878f34439fb590b717a1c6d60
+  sha256: dd347f15e0a2c8ea32e1bd5e1a49e294d3ab96b8008051c4e60d1f1505128fe9
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -32,7 +32,7 @@ requirements:
     - python >=${{ python_min }}
     - argcomplete >=3.5.2,<4
     - arrow >=1.0.2,<2.0.0
-    - b2sdk >=2.12.0,<3
+    - b2sdk >=2.13.0,<3
     - docutils >=0.18.1,<0.22
     - rst2ansi ==0.1.5
     - tabulate ==0.9.0
